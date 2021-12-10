@@ -53,6 +53,7 @@
                             <Can-Redefine-Classes>true</Can-Redefine-Classes>
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                             <Premain-Class>HolyricsAgent</Premain-Class>
+                            <Main-Class>Bootstrap</Main-Class>
                         </manifestEntries>
                     </archive>
                 </configuration>
