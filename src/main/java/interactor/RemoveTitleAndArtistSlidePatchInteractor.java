@@ -1,7 +1,6 @@
 package interactor;
 
 import dto.MethodPatchData;
-import transformers.SlideAndTitleMuciDataTransformer;
 import transformers.SlideAndTitleRemovalTransformer;
 
 import java.util.ArrayList;
@@ -10,7 +9,6 @@ import java.util.List;
 public class RemoveTitleAndArtistSlidePatchInteractor implements PatchInteractor {
 
     private final SlideAndTitleRemovalTransformer slideAndTitleRemovalTransformer = new SlideAndTitleRemovalTransformer();
-    private final SlideAndTitleMuciDataTransformer slideAndTitleMuciDataTransformer = new SlideAndTitleMuciDataTransformer();
 
     @Override
     public String getClassName() {
@@ -22,7 +20,6 @@ public class RemoveTitleAndArtistSlidePatchInteractor implements PatchInteractor
         return new ArrayList<MethodPatchData>(){
             {
                 add(new MethodPatchData("getTitleAndArtistParagraph", new String[]{"java.util.List", "com.limagiran.holyrics.model.theme.Theme"}, slideAndTitleRemovalTransformer));
-                add(new MethodPatchData("getParagraphsToPresentation", new String[]{}, slideAndTitleMuciDataTransformer));
             }
         };
     }

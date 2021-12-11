@@ -1,6 +1,5 @@
 import dto.MethodPatchData;
 import interactor.PatchInteractor;
-import interactor.RemoveFirstSlideInteractor;
 import interactor.RemoveTitleAndArtistSlidePatchInteractor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +15,6 @@ public class HolyricsAgent {
 
     public static List<PatchInteractor> patchInteractors  = new ArrayList<PatchInteractor>(){{
         add(new RemoveTitleAndArtistSlidePatchInteractor());
-        add(new RemoveFirstSlideInteractor());
     }};
 
     public static void premain(

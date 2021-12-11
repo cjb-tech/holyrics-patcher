@@ -1,10 +1,6 @@
-interactor\RemoveFirstSlideInteractor.class
 interactor\PatchInteractor.class
 transformers\SlideAndTitleRemovalTransformer.class
-GeneralMethodTransformer.class
-interactor\RemoveFirstSlideInteractor$1.class
-transformers\SlideAndTitleMuciDataTransformer.class
 interactor\RemoveTitleAndArtistSlidePatchInteractor.class
+GeneralMethodTransformer.class
 dto\MethodPatchData.class
-transformers\RemoveFirstParagraphTransformer.class
 interactor\RemoveTitleAndArtistSlidePatchInteractor$1.class
