@@ -1,6 +1,6 @@
 # holyrics-patcher
 
-**EN** | [RU] (README-ru.md) | [UK](README-uk.md)
+**EN** | [RU](README-ru.md) | [UK](README-uk.md)
 
 Set of patches for Holyrics.
 
