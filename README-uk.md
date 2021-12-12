@@ -8,7 +8,7 @@
 
 ## Використання
 
-Завантаж HolyricsLauncher.exe з зрозділу [Releases](https://github.com/cjb-tech/holyrics-patcher/releases/latest) і скопіюй його в папку Holyrics, поряд з Holyrics.exe. 
+Завантаж HolyricsLauncher.exe з зрозділу [Releases](https://github.com/cjb-tech/holyrics-patcher/releases/latest) і скопіюй його в папку Holyrics (зазвичай це C:/Holyrics), поряд з Holyrics.exe. 
 Відтепер запускай не Holyrics.exe, а HolyricsLauncher.exe - він буде запускати Holyrics з усіма змінами. 
 Не забудь створити новий ярлик на робочому столі і закріпити на панелі задач.
 
