@@ -49,7 +49,7 @@ public class GeneralMethodTransformer implements ClassFileTransformer {
                     LOGGER.info("[Agent] Transforming class " + targetClassName + "."  + targetMethodName);
                     CtMethod m = Arrays.stream(cc.getDeclaredMethods()).filter(el->{
                         try{
-                            return el.getName().equals(targetMethodName);// && checkForMethodArguments(el.getParameterTypes());
+                            return el.getName().equals(targetMethodName);
                         }catch (Exception e){
                             return false;
                         }
@@ -71,14 +71,4 @@ public class GeneralMethodTransformer implements ClassFileTransformer {
         return byteCode;
     }
 
-    private boolean checkForMethodArguments(CtClass[] parameterTypes, String[] targetMethodArgumentTypes) {
-        for (int i = 0; i < parameterTypes.length; i++) {
-            String parameterTypeClassName = parameterTypes[i].getName();
-            String targetMethodArgumentTypeName = targetMethodArgumentTypes[i];
-            if(!parameterTypeClassName.equals(targetMethodArgumentTypeName)){
-                return false;
-            }
-        }
-        return true;
-    }
 }

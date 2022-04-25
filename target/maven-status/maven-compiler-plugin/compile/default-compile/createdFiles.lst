@@ -1,6 +1,0 @@
-interactor\PatchInteractor.class
-transformers\SlideAndTitleRemovalTransformer.class
-interactor\RemoveTitleAndArtistSlidePatchInteractor.class
-GeneralMethodTransformer.class
-dto\MethodPatchData.class
-interactor\RemoveTitleAndArtistSlidePatchInteractor$1.class

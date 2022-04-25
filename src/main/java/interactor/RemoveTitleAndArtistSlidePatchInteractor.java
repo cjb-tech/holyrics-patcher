@@ -19,7 +19,7 @@ public class RemoveTitleAndArtistSlidePatchInteractor implements PatchInteractor
     public List<MethodPatchData> getMethodPatchDataList(){
         return new ArrayList<MethodPatchData>(){
             {
-                add(new MethodPatchData("getTitleAndArtistParagraph", new String[]{"java.util.List", "com.limagiran.holyrics.model.theme.Theme"}, slideAndTitleRemovalTransformer));
+                add(new MethodPatchData("getTitleAndArtistParagraph", new String[]{"boolean"}, slideAndTitleRemovalTransformer));
             }
         };
     }

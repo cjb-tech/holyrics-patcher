@@ -1,5 +1,6 @@
 import dto.MethodPatchData;
 import interactor.PatchInteractor;
+import interactor.RemoveCheckLibPatchInteractor;
 import interactor.RemoveTitleAndArtistSlidePatchInteractor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,21 +16,21 @@ public class HolyricsAgent {
 
     public static List<PatchInteractor> patchInteractors  = new ArrayList<PatchInteractor>(){{
         add(new RemoveTitleAndArtistSlidePatchInteractor());
+        add(new RemoveCheckLibPatchInteractor());
     }};
 
     public static void premain(
             String agentArgs, Instrumentation inst) {
-
         LOGGER.info("[Agent] In premain method");
         transformClass(inst);
     }
+
     private static void transformClass(Instrumentation instrumentation) {
         for(PatchInteractor patchInteractor : patchInteractors){
             String className = patchInteractor.getClassName();
             List<MethodPatchData> methodPatchDataList = patchInteractor.getMethodPatchDataList();
             Class<?> targetCls = null;
             ClassLoader targetClassLoader = null;
-            // see if we can get the class using forName
             try {
                 targetCls = Class.forName(className);
                 targetClassLoader = targetCls.getClassLoader();
@@ -39,7 +40,6 @@ public class HolyricsAgent {
             } catch (Exception ex) {
                 LOGGER.error("Class [{}] not found with Class.forName", className);
             }
-            // otherwise iterate all loaded classes and find what we want
             boolean foundedWithAllClassLoadedSearch = false;
             for(Class<?> clazz: instrumentation.getAllLoadedClasses()) {
                 if(clazz.getName().equals(className)) {
@@ -53,8 +53,17 @@ public class HolyricsAgent {
                 throw new RuntimeException(
                         "Failed to find class [" + className + "]");
             }
-            for(MethodPatchData methodPatchData : patchInteractor.getMethodPatchDataList()){
 
+            try {
+                Class<?> targetClazz = Class.forName(patchInteractor.getClassName());
+                transform(instrumentation,
+                        targetClazz,
+                        targetClazz.getClassLoader(),
+                        patchInteractor.getClassName(),
+                        patchInteractor.getMethodPatchDataList()
+                );
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
         }
 

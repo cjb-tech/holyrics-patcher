@@ -1,0 +1,19 @@
+<launch4jConfig>
+    <headerType>gui</headerType>
+    <outfile>dist/HolyricsLauncher.exe</outfile>
+    <jar>target/agent-jar-with-dependencies.jar</jar>
+    <singleInstance>
+        <mutexName>text</mutexName>
+    </singleInstance>
+    <dontWrapJar>false</dontWrapJar>
+    <errTitle>Holyrics</errTitle>
+    <icon>build/icon.ico</icon>
+    <restartOnCrash>false</restartOnCrash>
+    <stayAlive>true</stayAlive>
+    <classPath>
+        <mainClass>Bootstrap</mainClass>
+    </classPath>
+    <jre>
+        <path>Holyrics/jre</path>
+    </jre>
+</launch4jConfig>
