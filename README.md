@@ -1,3 +1,6 @@
+> Holyrics Patcher is no longer supported.
+> Use [holyrics-hide-zero-slide](https://github.com/cjb-tech/holyrics-hide-zero-slide/blob/master/README.md#readme) for hiding zero slide.
+
 # holyrics-patcher
 
 **EN** | [RU](README-ru.md) | [UK](README-uk.md)

@@ -1,3 +1,6 @@
+> Holyrics Patcher більше не підтримується.
+> Використовуй [holyrics-hide-zero-slide](https://github.com/cjb-tech/holyrics-hide-zero-slide/blob/master/README-uk.md#readme) щоб приховати нульовий слайд.
+
 # holyrics-patcher
 
 [EN](README.md) | [RU](README-ru.md) | **UK**
